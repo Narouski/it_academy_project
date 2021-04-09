@@ -1,2 +1,6 @@
-height = int(input("Введите ваш рост "))
-weight = int(input("Введите ваш вес "))
+height = float(input("Введите ваш рост: "))
+weight = float(input("Введите ваш вес: "))
+
+BMI = weight / (height/100) ** 2
+
+print(f'Ваш BMI {BMI}')
