@@ -6,4 +6,4 @@ BMI = weight / (height/100) ** 2
 x = '=' * 60
 
 print(f'Ваш BMI {round(BMI, 2)}')
-print('20 ' + x[:int(BMI)] + '|' + x[int(BMI):] + ' 60')
+print('20 ' + x[:int(BMI) - 19] + '|' + x[int(BMI):] + ' 60')
