@@ -1,4 +1,6 @@
 sex = input("Укажите ваш пол одной буквой: ").lower()
+s = ['w', 'ж', 'д', 'g']
+x = '=' * 50
 
 if sex == 'm' or sex == 'м' or sex == 'b' or sex == 'п':
     height = float(input("Введите ваш рост в см: "))
@@ -16,7 +18,7 @@ if sex == 'm' or sex == 'м' or sex == 'b' or sex == 'п':
         print(f"Ваш BMI равен {BMI}. У вас ожирение второй степени")
     elif 39 < BMI <= 40:
         print(f"Ваш BMI равен {BMI}. У вас ожирение третьей степени")
-    print('16<' + '=' * (int(BMI) - 17) + '|' + '=' * (50 - int(BMI)) + '>50')
+    print('16<' + x[:int(BMI) - 17] + '|' + x[50 - int(BMI):] + '>50')
 elif sex == 'w' or sex == 'ж' or sex == 'д' or sex == 'g':
     height = float(input("Введите ваш рост в см: "))
     weight = float(input("Введите ваш вес в кг: "))
@@ -33,7 +35,7 @@ elif sex == 'w' or sex == 'ж' or sex == 'д' or sex == 'g':
         print(f"Ваш BMI равен {BMI}. У вас ожирение второй степени")
     elif BMI > 40:
         print(f"Ваш BMI равен {BMI}. У вас ожирение третьей степени")
-    print('16<' + '=' * (int(BMI) - 17) + '|' + '=' * (50 - int(BMI)) + '>50')
+    print('16<' + x[:int(BMI) - 17] + '|' + x[50 - int(BMI):] + '>50')
 else:
     print(f"Что-то пошло не так, попробуйте ещё раз!")
 
