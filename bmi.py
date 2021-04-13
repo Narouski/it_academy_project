@@ -1,18 +1,41 @@
-sex = input("Введите ваш пол: ")
-height = float(input("Введите ваш рост в см: "))
-weight = float(input("Введите ваш вес в кг: "))
+sex = input("Укажите ваш пол одной буквой: ").lower()
 
-x = '=' * 60
+if sex == 'm' or sex == 'м' or sex == 'b' or sex == 'п':
+    height = float(input("Введите ваш рост в см: "))
+    weight = float(input("Введите ваш вес в кг: "))
+    BMI = round(weight / (height/100) ** 2, 2)
+    if BMI <= 16:
+        print(f"Ваш BMI равен {BMI}. У вас дефицит массы")
+    elif 16 < BMI <= 18:
+        print(f"Ваш BMI равен {BMI}. У вас недостаточная масса тела")
+    elif 18.5 < BMI <= 23.8:
+        print(f"Ваш BMI равен {BMI}. Он соответствует норме")
+    elif 23.9 < BMI <= 28.5:
+        print(f"Ваш BMI равен {BMI}. У вас ожирение первой степени")
+    elif 28.6 < BMI <= 38.9:
+        print(f"Ваш BMI равен {BMI}. У вас ожирение второй степени")
+    elif 39 < BMI <= 40:
+        print(f"Ваш BMI равен {BMI}. У вас ожирение третьей степени")
+    print('16<' + '=' * (int(BMI) - 17) + '|' + '=' * (50 - int(BMI)) + '>50')
+elif sex == 'w' or sex == 'ж' or sex == 'д' or sex == 'g':
+    height = float(input("Введите ваш рост в см: "))
+    weight = float(input("Введите ваш вес в кг: "))
+    BMI = round(weight / (height/100) ** 2, 2)
+    if BMI <= 16:
+        print(f"Ваш BMI равен {BMI}. У вас дефицит массы")
+    elif 16 < BMI <= 20:
+        print(f"Ваш BMI равен {BMI}. У вас недостаточная масса тела")
+    elif 20.1 < BMI <= 24.9:
+        print(f"Ваш BMI равен {BMI}. Он соответствует норме")
+    elif 25 < BMI <= 29.9:
+        print(f"Ваш BMI равен {BMI}. У вас ожирение первой степени")
+    elif 30 < BMI <= 39.9:
+        print(f"Ваш BMI равен {BMI}. У вас ожирение второй степени")
+    elif BMI > 40:
+        print(f"Ваш BMI равен {BMI}. У вас ожирение третьей степени")
+    print('16<' + '=' * (int(BMI) - 17) + '|' + '=' * (50 - int(BMI)) + '>50')
+else:
+    print(f"Что-то пошло не так, попробуйте ещё раз!")
 
-BMI = round(weight / (height/100) ** 2, 2)
-d = BMI <= 16  # "Дефицит массы"
-dm = 16 < BMI <= 18  # Недостаточная масса тела
-n = 18 < BMI <= 25  # Норма
-a = 25 < BMI <= 30  # Избыточная масса тела
-f1 = 30 < BMI <= 35  # Ожирение первой степени
-f2 = 35 < BMI <= 40  # Ожирение второй степени
-f3 = BMI > 40  # Ожирение третьей степени
 
-print(f'Ваш BMI {BMI}')
-print('16 ' + x[:int(BMI) - 16] + '|' + x[int(BMI):] + ' 60')
 
