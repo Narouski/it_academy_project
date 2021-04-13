@@ -37,6 +37,3 @@ elif sex == 'w' or sex == 'ж' or sex == 'д' or sex == 'g':
     print('16<' + x[:int(BMI) - 17] + '|' + x[50 - int(BMI):] + '>50')
 else:
     print(f"Что-то пошло не так, попробуйте ещё раз!")
-
-
-
