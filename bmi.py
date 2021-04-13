@@ -1,5 +1,4 @@
 sex = input("Укажите ваш пол одной буквой: ").lower()
-s = ['w', 'ж', 'д', 'g']
 x = '=' * 50
 
 if sex == 'm' or sex == 'м' or sex == 'b' or sex == 'п':
