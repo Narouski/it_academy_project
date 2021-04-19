@@ -46,14 +46,14 @@ ACTIONS = {
 
 
 def select_action(answer: int):
-    return ACTIONS.get(answer, show_menu())
+    return ACTIONS.get(answer, show_menu)
 
 
 def main():
     answer = 0
     while True:
         action = select_action(answer)
-        #answer = action()
+        answer = action()
 
 
 main()
