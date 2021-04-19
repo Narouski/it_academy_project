@@ -34,3 +34,24 @@ else:
     print(f"Что-то пошло не так, попробуйте ещё раз!")
 
 print('16<' + x[:int(BMI) - 17] + '|' + x[50 - int(BMI):] + '>50')
+
+def menu():
+    pass
+
+def user_list():
+    pass
+
+def user_info():
+    pass
+
+def changes_data_user():
+    pass
+
+def delete_user():
+    pass
+
+def make_user():
+    pass
+
+def ex_program():
+    pass
