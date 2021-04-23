@@ -1,14 +1,10 @@
 user_list = {}
 
 
-def update_user():
-    print("changes_data_user")
-
-
 def delete_user():
     choice_to_delete = input("Введите имя пользователя которого хотите удалить: ")
     if choice_to_delete in user_list:
-        print(*f"Пользователь {user_list.pop(choice_to_delete)} был удалён")
+        print(f"Пользователь {user_list.pop(choice_to_delete)} был удалён")
         return main()
     else:
         print("Пользователя с данным именем нет")
@@ -21,10 +17,18 @@ def make_user():
     age = int(input("Введите ваш возрост: "))
     user_list[surname_name] = [first_name, surname_name, age]
     print(f"Пользователь {first_name} {surname_name} создан успешно!")
+    print(user_list)
     return main()
 
 
+def update_user():
+    data = input("Введите данные которые вы хотели бы изменить: ").title()
+
+    print("changes_data_user")
+
+
 def users_list():
+    print("Список пользователей")
     for key in user_list:
         print(key)
     return main()
