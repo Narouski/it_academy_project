@@ -1,5 +1,4 @@
 user_list = {}
-users = []
 
 
 def update_user():
@@ -17,22 +16,26 @@ def delete_user():
 
 
 def make_user():
-    first_name = input("Введите ваше имя: ")
-    second_name = input("Введите вашу фамилию: ")
-    age = input("Введите ваш возрост: ")
-    users.extend((first_name, second_name, age))
-    user_list[first_name] = users
-    print(f"Пользователь {first_name} {second_name} создан успешно!")
+    first_name = input("Введите ваше имя: ").title()
+    surname_name = input("Введите вашу фамилию: ").title()
+    age = int(input("Введите ваш возрост: "))
+    user_list[surname_name] = [first_name, surname_name, age]
+    print(f"Пользователь {first_name} {surname_name} создан успешно!")
     return main()
 
 
 def users_list():
-    print(*users[::3])
+    for key in user_list:
+        print(key)
     return main()
 
 
 def user_info():
-    print(user_list)
+    info = input("Введите имя человека который вас интересует: ")
+    if info in user_list:
+        print(*user_list[info])
+    else:
+        print("Такого нет")
     return main()
 
 
